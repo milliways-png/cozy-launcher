@@ -1,0 +1,29 @@
+.custom-window {
+  position: relative;
+  
+  width: 384px;
+  height: 288px; 
+  
+  background-image: url('../assets/ui/window/window.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  image-rendering: pixelated;
+}
+
+.drag-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: move;
+}
+
+.app-content {
+  position: absolute;
+  z-index: 2;
+  padding: 20px;
+  box-sizing: border-box;
+}
