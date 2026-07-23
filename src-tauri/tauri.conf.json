@@ -13,9 +13,13 @@
     "windows": [
       {
         "title": "cozy launcher",
-        "width": 800,
-        "height": 600,
-        "resizable": true,
+        "width": 384,
+        "height": 288,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "dragDropEnabled": false,
         "fullscreen": false
       }
     ],
