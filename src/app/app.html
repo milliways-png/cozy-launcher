@@ -1,11 +1,33 @@
 <main class="main">
-<div class="custom-window">
-  <div class="drag-handle" (mousedown)="onWindowDrag($event)"></div>
-  
-  <!-- Put your actual UI buttons, text, and views inside here -->
-  <div class="app-content">
-   <h1>hi</h1>
+  <div class="custom-window">
+    <div class="drag-handle" (mousedown)="onWindowDrag($event)"></div>
+
+    <!-- Put your actual UI buttons, text, and views inside here -->
+    <div class="app-content">
+      <span>cozy launcher 🌱</span>
+      <div class="action-bar-container">
+        <button class="action-bar-button" (click)="loadShortcuts()">
+          <span>🔄</span>
+        </button>
+      </div>
+      <div class="shortcut-container">
+        @for (file of shortcutFiles; track file) {
+          <button (click)="openShortcut(file)" class="shortcut-button">
+            <!-- NOTE: placeholder icon, change in the future -->
+            <span class="icon">🚀</span>
+            <span class="label">{{ file.replace('.lnk', '') }}</span>
+          </button>
+        }
+
+        <!-- NOTE: Empty state if the user hasn't dropped any files in the directory yet -->
+        @if (shortcutFiles.length === 0) {
+          <p style="color: #666">
+            No shortcuts found. Drag and drop program shortcuts into your "cozy_launcher_shortcuts"
+            Documents folder to see them here!
+          </p>
+        }
+      </div>
+    </div>
   </div>
-</div>
 </main>
 <router-outlet />
