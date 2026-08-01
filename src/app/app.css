@@ -2,13 +2,16 @@
   position: relative;
   
   width: 384px;
-  height: 288px; 
-  
-  background-image: url('../assets/ui/window/window.png');
+  height: 148px; 
+  /*background-image: url('../assets/ui/window/window.png');*/
+  background-color: #f5f3f0;
+  border-radius: 8px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   image-rendering: pixelated;
+
+  
 }
 
 .drag-handle {
@@ -22,25 +25,24 @@
 }
 
 .app-content {
-    position: absolute;
-    top: 50px;
-    left: 45px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 2;
-    padding: 0px;
+    padding-top: 10px;
+}
 
+button {
+    z-index: 100;
 }
 
 .shortcut-container {
     padding: 0px; 
     display: grid;
-    grid-template-columns: repeat(4,64px);
+    grid-template-columns: repeat(5,64px);
     max-width: 100%;
     box-sizing: border-box;
-    gap: 12px;
+    gap: 0px;
 }
 
 .shortcut-button {
@@ -56,36 +58,48 @@ justify-content: center;
 box-sizing: border-box;
 
 gap: 16px; 
-border-radius: 6px; 
-border: 1px solid #ccc; 
-background: #fff;    
+border: 1px solid #833434; 
+background-color: #ffffff00;   
 }
 
 .icon {
-    font-size: 15px;
+    width: 24px;
 }
 
 .label {
-    font-size: 10px;
+    font-size: 8px;
+    font-family: "cozy";
+    color: #6e524b;
+}
+
+.title {
+    font-family: "cozy";
+    font-weight: bold;
+    color: #6e524b;
+    font-size: 12px;
 }
 
 .action-bar-button {
-    padding: 8px 16px; 
+    padding: 6px 5px; 
+    font-family: "cozy";
+    font-size: 8px;
     cursor: pointer; 
-    border-radius: 4px; 
-    border: 1px solid #007acc; 
-    background: #007acc; 
+    border-radius: 2px; 
+    border: 1px solid #615453; 
+    background: #886c5e; 
     color: white; 
-    font-weight: bold; 
+     
     display: flex; 
     align-items: center; 
     gap: 8px;   
 }
 
 .action-bar-container {
-    padding: 0 20px; 
-    margin-top: 10px;
+    padding: 0 0px; 
+    margin-top: 0px;
     display: flex; 
+    width: 360px;
+
     align-items: flex-start;
-    margin-bottom: 10px;    
+    margin-bottom: 20px;    
 }
