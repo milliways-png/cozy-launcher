@@ -4,17 +4,17 @@
 
     <!-- Put your actual UI buttons, text, and views inside here -->
     <div class="app-content">
-      <span>cozy launcher 🌱</span>
+     <!--<span class="title">cozy launcher </span>--> 
       <div class="action-bar-container">
         <button class="action-bar-button" (click)="loadShortcuts()">
-          <span>🔄</span>
+          <span>[reload]</span>
         </button>
       </div>
       <div class="shortcut-container">
         @for (file of shortcutFiles; track file) {
           <button (click)="openShortcut(file)" class="shortcut-button">
             <!-- NOTE: placeholder icon, change in the future -->
-            <span class="icon">🚀</span>
+            <img src="assets/icons/directory.png" class="icon">
             <span class="label">{{ file.replace('.lnk', '') }}</span>
           </button>
         }
