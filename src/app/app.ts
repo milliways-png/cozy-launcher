@@ -3,17 +3,18 @@ import { CommonModule } from '@angular/common';
 import { invoke } from '@tauri-apps/api/core';
 import { RouterOutlet } from '@angular/router';
 import { getCurrentWindow } from '@tauri-apps/api/window'
+import { Config } from './features/config/config';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, Config],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit {
   shortcutFiles: string[] = [];
+  showConfig: boolean = false;
   protected readonly title = signal('cozy-launcher');
-
   constructor(private ngZone: NgZone) {}
 
   ngOnInit(): void {
