@@ -7,3 +7,17 @@ html, body {
   width: 100%;
   height: 100%;
 }
+
+@font-face {
+  font-family: "cozy";
+  src: url("assets/fonts/dogicapixel.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cozy";
+  src: url("assets/fonts/dogicapixelbold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

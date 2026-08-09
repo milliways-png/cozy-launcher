@@ -1,11 +1,42 @@
 <main class="main">
-<div class="custom-window">
-  <div class="drag-handle" (mousedown)="onWindowDrag($event)"></div>
-  
-  <!-- Put your actual UI buttons, text, and views inside here -->
-  <div class="app-content">
-   <h1>hi</h1>
-  </div>
-</div>
+  @if (!showConfig) {  <div class="custom-window">
+    <div class="drag-handle" (mousedown)="onWindowDrag($event)"></div>
+    <div class="app-content">
+     <!--<span class="title">cozy launcher </span>--> 
+      <div class="action-bar-container">
+        <button class="action-bar-button" (click)="loadShortcuts()">
+          <span>[reload]</span>
+        </button>
+        <button class="action-bar-button" (click)="showConfig = true">
+          <span>[settings]</span>
+        </button>
+
+
+
+      </div>
+      <div class="shortcut-container">
+        @for (file of shortcutFiles; track file) {
+          <button (click)="openShortcut(file)" class="shortcut-button">
+            <!-- NOTE: placeholder icon, change in the future -->
+            <img src="assets/icons/directory.png" class="icon">
+            <span class="label">{{ file.replace('.lnk', '') }}</span>
+          </button>
+        }
+
+        <!-- NOTE: Empty state if the user hasn't dropped any files in the directory yet -->
+        @if (shortcutFiles.length === 0) {
+          <p style="color: #666">
+            No shortcuts found. Drag and drop program shortcuts into your "cozy_launcher_shortcuts"
+            Documents folder to see them here!
+          </p>
+        }
+      </div>
+    </div>
+  </div>}
+
+  @if (showConfig) {
+    <app-config (close)="showConfig = false" />
+  }
+
 </main>
 <router-outlet />
